@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable-v24/ic_male.xml" value="0.24814814814814815" />
+        <entry key="app/src/main/res/drawable/ic_female.xml" value="0.258974358974359" />
+        <entry key="app/src/main/res/layout/activity_detail_characters.xml" value="0.12006079027355623" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.12006079027355623" />
+        <entry key="app/src/main/res/layout/character_list_activity.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/model_character_detail_data_point.xml" value="0.12006079027355623" />
+        <entry key="app/src/main/res/layout/model_character_detail_header.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/model_character_detail_image.xml" value="0.1358695652173913" />
+        <entry key="app/src/main/res/layout/model_character_detail_point.xml" value="0.1358695652173913" />
+        <entry key="app/src/main/res/layout/model_character_list_item.xml" value="0.12006079027355623" />
+        <entry key="app/src/main/res/layout/model_character_list_title.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/model_loading.xml" value="0.15489130434782608" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
