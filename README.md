@@ -13,7 +13,7 @@ Halaman Utama
 
 ![photo_2021-10-05 12 54 40](https://user-images.githubusercontent.com/73704390/135968701-80b49577-9f3d-4ad5-ad42-9587fbd42288.jpeg)
 
-~ menampilkan list daftar gambar dan nama karakter dari rick and morty berdasarkan 
+~ menampilkan list daftar gambar dan nama karakter dari rick and morty berdasarkan alfabet
 
 ~ mengclick karakter untuk pindah ke halaman detail
 
