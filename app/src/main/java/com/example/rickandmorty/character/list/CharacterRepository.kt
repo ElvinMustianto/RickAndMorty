@@ -1,6 +1,6 @@
 package com.example.rickandmorty.character.list
 
-import com.example.rickandmorty.model.GetCharactersPageResponse
+import com.example.rickandmorty.domain.model.GetCharactersPageResponse
 import com.example.rickandmorty.service.NetworkLayer
 
 class CharacterRepository {

@@ -5,7 +5,7 @@ import com.airbnb.epoxy.paging.PagedListEpoxyController
 import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.ModelCharacterListItemBinding
 import com.example.rickandmorty.databinding.ModelCharacterListTitleBinding
-import com.example.rickandmorty.model.GetCharacterByIdResponse
+import com.example.rickandmorty.domain.model.GetCharacterByIdResponse
 import com.squareup.picasso.Picasso
 import java.util.*
 

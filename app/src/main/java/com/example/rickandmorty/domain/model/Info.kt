@@ -1,4 +1,4 @@
-package com.example.rickandmorty.model
+package com.example.rickandmorty.domain.model
 
 data class Info(
     val count: Int = 0,

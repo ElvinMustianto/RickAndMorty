@@ -22,11 +22,11 @@ class DetailCharactersActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_characters)
 
-        viewModel.characterByIdLiveData.observe(this) { response ->
+        viewModel.characterByIdLiveData.observe(this) { character ->
 
-            epoxyController.characterResponse = response
+            epoxyController.character = character
 
-            if (response == null) {
+            if (character == null) {
                 Toast.makeText(
                     this@DetailCharactersActivity,
                     "Unsuccessful network call",

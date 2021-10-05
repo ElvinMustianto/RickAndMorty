@@ -8,7 +8,7 @@ import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.example.rickandmorty.PAGE_SIZE
 import com.example.rickandmorty.PREFETCH_DISTANCE
-import com.example.rickandmorty.model.GetCharacterByIdResponse
+import com.example.rickandmorty.domain.model.GetCharacterByIdResponse
 
 class CharacterViewModel: ViewModel() {
 

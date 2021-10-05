@@ -1,7 +1,7 @@
 package com.example.rickandmorty.character.list
 
 import androidx.paging.PageKeyedDataSource
-import com.example.rickandmorty.model.GetCharacterByIdResponse
+import com.example.rickandmorty.domain.model.GetCharacterByIdResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
