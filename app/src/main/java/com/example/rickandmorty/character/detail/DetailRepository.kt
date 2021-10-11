@@ -1,14 +1,20 @@
 package com.example.rickandmorty.character.detail
 
-import com.example.rickandmorty.domain.Character
-import com.example.rickandmorty.domain.GetEpisodeByIdResponse
+import com.example.rickandmorty.domain.model.Character
+import com.example.rickandmorty.service.response.GetEpisodeByIdResponse
 import com.example.rickandmorty.domain.mapper.CharacterMapper
-import com.example.rickandmorty.domain.model.GetCharacterByIdResponse
+import com.example.rickandmorty.service.Cache
+import com.example.rickandmorty.service.response.GetCharacterByIdResponse
 import com.example.rickandmorty.service.NetworkLayer
 
 class DetailRepository {
 
     suspend fun getCharacterById(characterId: Int): Character? {
+        // Check the cache for our Character
+        val cacheCharacter = Cache.characterMap[characterId]
+        if (cacheCharacter != null){
+            return cacheCharacter
+        }
         val request = NetworkLayer.apiClient.getCharacterById(characterId)
 
         if (request.failed || !request.isSuccessful) {
@@ -16,10 +22,15 @@ class DetailRepository {
         }
 
         val networkEpisode = getEpisodesFromCharacterResponse(request.body)
-        return CharacterMapper.getCharacter(
+        val character = CharacterMapper.getCharacter(
             response = request.body,
             episodes = networkEpisode
         )
+        // Update cache and return value
+        Cache.let {
+            Cache.characterMap[characterId] = character
+            return character
+        }
     }
 
     private suspend fun getEpisodesFromCharacterResponse(

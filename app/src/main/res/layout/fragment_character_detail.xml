@@ -3,18 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.CharacterListActivity">
-
+    android:layout_height="match_parent">
 
     <com.airbnb.epoxy.EpoxyRecyclerView
         android:id="@+id/epoxyRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="2"
-        app:itemSpacing="8dp"
-        tools:itemCount="12" />
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

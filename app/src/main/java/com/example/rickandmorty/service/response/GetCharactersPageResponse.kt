@@ -1,7 +1,6 @@
-package com.example.rickandmorty.domain.model
-
+package com.example.rickandmorty.service.response
 
 data class GetCharactersPageResponse(
-    val info: Info = Info(),
+    val info: PageInfo = PageInfo(),
     val results: List<GetCharacterByIdResponse> = emptyList()
 )

@@ -1,4 +1,4 @@
-package com.example.rickandmorty.domain
+package com.example.rickandmorty.service.response
 
 data class GetEpisodeByIdResponse(
     val id: Int,

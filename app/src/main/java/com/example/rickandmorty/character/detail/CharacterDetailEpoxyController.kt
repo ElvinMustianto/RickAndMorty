@@ -1,12 +1,14 @@
-package com.example.rickandmorty.epoxy
+package com.example.rickandmorty.character.detail
 
 import android.annotation.SuppressLint
 import com.airbnb.epoxy.CarouselModel_
 import com.airbnb.epoxy.EpoxyController
 import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.*
-import com.example.rickandmorty.domain.Character
-import com.example.rickandmorty.domain.Episode
+import com.example.rickandmorty.domain.model.Character
+import com.example.rickandmorty.domain.model.Episodes
+import com.example.rickandmorty.epoxy.LoadingEpoxyModel
+import com.example.rickandmorty.epoxy.ViewBindingKotlinModel
 import com.squareup.picasso.Picasso
 
 class CharacterDetailEpoxyController: EpoxyController() {
@@ -50,8 +52,8 @@ class CharacterDetailEpoxyController: EpoxyController() {
         ).id("image").addTo(this)
 
         // Episode carousel list section
-        if (character!!.episodeList.isNotEmpty()) {
-            val item = character!!.episodeList.map {
+        if (character!!.episodesList.isNotEmpty()) {
+            val item = character!!.episodesList.map {
                 EpisodeItem(it).id(it.id)
             }
             Title(title = "Episode").id("title_episodes").addTo(this)
@@ -111,12 +113,12 @@ class CharacterDetailEpoxyController: EpoxyController() {
     }
 
     data class EpisodeItem(
-        val episode: Episode
+        val episodes: Episodes
     ): ViewBindingKotlinModel<ModelEpisodeItemBinding>(R.layout.model_episode_item) {
         @SuppressLint("SetTextI18n")
         override fun ModelEpisodeItemBinding.bind() {
-            episodeText.text = episode.episode
-            episodeDetailText.text = "${episode.name}\n${episode.airDate}"
+            episodeText.text = episodes.getFormattedSeasonTruncated()
+            episodeDetailText.text = "${episodes.name}\n${episodes.airDate}"
         }
     }
 

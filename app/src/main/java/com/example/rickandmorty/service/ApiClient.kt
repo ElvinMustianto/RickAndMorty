@@ -1,8 +1,9 @@
 package com.example.rickandmorty.service
 
-import com.example.rickandmorty.domain.GetEpisodeByIdResponse
-import com.example.rickandmorty.domain.model.GetCharacterByIdResponse
-import com.example.rickandmorty.domain.model.GetCharactersPageResponse
+import com.example.rickandmorty.service.response.GetEpisodeByIdResponse
+import com.example.rickandmorty.service.response.GetCharacterByIdResponse
+import com.example.rickandmorty.service.response.GetCharactersPageResponse
+import com.example.rickandmorty.service.response.GetEpisodesPageResponse
 import retrofit2.Response
 
 class ApiClient (
@@ -23,6 +24,9 @@ class ApiClient (
 
     suspend fun getEpisodeRange(episodeRange: String): SimpleResponse<List<GetEpisodeByIdResponse>> {
         return safeApiCall { rickAndMortyService.getEpisodeRange(episodeRange) }
+    }
+    suspend fun getEpisodePage(pageIndex: Int): SimpleResponse<GetEpisodesPageResponse> {
+        return safeApiCall { rickAndMortyService.getEpisodesPage(pageIndex) }
     }
     private inline fun <T> safeApiCall(apiCall: () -> Response<T>): SimpleResponse<T> {
         return try {

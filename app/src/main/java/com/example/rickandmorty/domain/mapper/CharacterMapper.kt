@@ -1,8 +1,8 @@
 package com.example.rickandmorty.domain.mapper
 
-import com.example.rickandmorty.domain.Character
-import com.example.rickandmorty.domain.GetEpisodeByIdResponse
-import com.example.rickandmorty.domain.model.GetCharacterByIdResponse
+import com.example.rickandmorty.domain.model.Character
+import com.example.rickandmorty.service.response.GetEpisodeByIdResponse
+import com.example.rickandmorty.service.response.GetCharacterByIdResponse
 
 object CharacterMapper {
 
@@ -11,8 +11,8 @@ object CharacterMapper {
         episodes: List<GetEpisodeByIdResponse>
     ): Character {
         return Character(
-            episodeList = episodes.map {
-                 EpisodeMapper.getEpisode(it)
+            episodesList =episodes.map {
+                   EpisodeMapper.buildFrom(it)
             },
             gender = response.gender,
             id = response.id,

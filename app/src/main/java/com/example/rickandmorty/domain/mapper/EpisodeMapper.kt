@@ -1,16 +1,33 @@
 package com.example.rickandmorty.domain.mapper
 
-import com.example.rickandmorty.domain.Episode
-import com.example.rickandmorty.domain.GetEpisodeByIdResponse
+import com.example.rickandmorty.domain.model.Episodes
+import com.example.rickandmorty.service.response.GetEpisodeByIdResponse
+
 
 object EpisodeMapper {
-
-    fun getEpisode(networkEpisode: GetEpisodeByIdResponse): Episode {
-        return Episode(
+    fun buildFrom(
+        networkEpisode: GetEpisodeByIdResponse
+        ): Episodes {
+        return Episodes(
             id = networkEpisode.id,
             name = networkEpisode.name,
             airDate = networkEpisode.air_date,
-            episode = networkEpisode.episode
+            seasonNumber = getSeasonFromEpisodeString(networkEpisode.episode),
+            episodeNumber = getEpisodeFromEpisodeString(networkEpisode.episode)
         )
+    }
+    private fun getSeasonFromEpisodeString(episode: String): Int {
+        val endIndex = episode.indexOfFirst { it.equals('e', true) }
+        if (endIndex == -1) {
+            return 0
+        }
+        return episode.substring(1, endIndex).toIntOrNull() ?: 0
+    }
+    private fun getEpisodeFromEpisodeString(episode: String): Int {
+        val startIndex = episode.indexOfFirst { it.equals('e', true) }
+        if (startIndex == -1) {
+            return 0
+        }
+        return episode.substring(startIndex + 1).toIntOrNull() ?: 0
     }
 }

@@ -1,11 +1,13 @@
-package com.example.rickandmorty.epoxy
+package com.example.rickandmorty.character.list
 
 import com.airbnb.epoxy.EpoxyModel
 import com.airbnb.epoxy.paging.PagedListEpoxyController
 import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.ModelCharacterListItemBinding
-import com.example.rickandmorty.databinding.ModelCharacterListTitleBinding
-import com.example.rickandmorty.domain.model.GetCharacterByIdResponse
+import com.example.rickandmorty.databinding.ModelHeaderTiltelBinding
+import com.example.rickandmorty.service.response.GetCharacterByIdResponse
+import com.example.rickandmorty.epoxy.LoadingEpoxyModel
+import com.example.rickandmorty.epoxy.ViewBindingKotlinModel
 import com.squareup.picasso.Picasso
 import java.util.*
 
@@ -66,9 +68,9 @@ class CharacterListPagingEpoxyController(
     }
     data class CharacterGridTitleEpoxyModel(
         val title: String
-    ): ViewBindingKotlinModel<ModelCharacterListTitleBinding>(R.layout.model_character_list_title) {
+    ): ViewBindingKotlinModel<ModelHeaderTiltelBinding>(R.layout.model_header_tiltel) {
 
-        override fun ModelCharacterListTitleBinding.bind() {
+        override fun ModelHeaderTiltelBinding.bind() {
             textView.text = title
         }
 

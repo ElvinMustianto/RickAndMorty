@@ -1,4 +1,5 @@
-package com.example.rickandmorty.domain.model
+
+package com.example.rickandmorty.service.response
 
 data class GetCharacterByIdResponse(
     val created: String,
@@ -8,9 +9,20 @@ data class GetCharacterByIdResponse(
     val image: String,
     val location: Location,
     val name: String,
-    val origin: Origin,
+    val origin: Origin ,
     val species: String,
     val status: String,
     val type: String,
     val url: String
-)
+) {
+    data class Location(
+        val name: String,
+        val url: String
+    )
+
+    data class Origin(
+        val name: String,
+        val url: String
+    )
+}
+

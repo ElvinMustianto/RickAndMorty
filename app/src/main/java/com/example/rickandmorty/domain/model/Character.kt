@@ -1,11 +1,7 @@
-package com.example.rickandmorty.domain
-
-import com.example.rickandmorty.domain.model.Location
-import com.example.rickandmorty.domain.model.Origin
-import com.squareup.moshi.Json
+package com.example.rickandmorty.domain.model
 
 data class Character(
-    val episodeList: List<Episode> = listOf(),
+    val episodesList: List<Episodes> = listOf(),
     val gender: String,
     val id: Int = 0,
     val image: String,
