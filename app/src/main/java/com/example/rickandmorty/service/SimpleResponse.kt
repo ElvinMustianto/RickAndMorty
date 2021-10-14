@@ -36,4 +36,6 @@ data class SimpleResponse<T>(
         get() = !failed && this.data?.isSuccessful == true
     val body: T
         get() = this.data!!.body()!!
+    val bodyNullable: T?
+        get() = this.data?.body()
 }

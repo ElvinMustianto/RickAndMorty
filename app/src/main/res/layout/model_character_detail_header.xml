@@ -36,6 +36,7 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintTop_toTopOf="@id/nameTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:src="@drawable/ic_male"/>
+        tools:src="@drawable/ic_male"
+        app:tint="?colorOnSurface"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     app:cardBackgroundColor="?colorSurface"
     app:strokeColor="?colorOnSurface"
-    app:strokeWidth="1dp">
+    app:strokeWidth="1dp"
+    app:cardCornerRadius="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

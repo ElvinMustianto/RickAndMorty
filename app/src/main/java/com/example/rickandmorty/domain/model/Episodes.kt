@@ -6,7 +6,8 @@ data class Episodes(
     val name: String,
     val airDate: String,
     val episodeNumber: Int,
-    val seasonNumber: Int
+    val seasonNumber: Int,
+    val characters: List<Character> = emptyList()
 ){
     fun getFormattedSeason(): String {
         return "Season $seasonNumber Episode $episodeNumber"

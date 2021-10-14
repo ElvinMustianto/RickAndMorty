@@ -10,7 +10,9 @@ import com.example.rickandmorty.epoxy.ViewBindingKotlinModel
 import kotlinx.coroutines.ObsoleteCoroutinesApi
 
 @ObsoleteCoroutinesApi
-class EpisodeListEpoxyController: PagingDataEpoxyController<EpisodeUiModel>() {
+class EpisodeListEpoxyController(
+    private val onEpisodeClicked: (Int) -> Unit
+): PagingDataEpoxyController<EpisodeUiModel>() {
 
     override fun buildItemModel(currentPosition: Int, item: EpisodeUiModel?): EpoxyModel<*> {
        return when (item!!) {
@@ -19,7 +21,7 @@ class EpisodeListEpoxyController: PagingDataEpoxyController<EpisodeUiModel>() {
                EpisodeListItemEpoxyModel(
                    episodes = episode,
                    onClick = { episodeId ->
-                       // todo
+                       onEpisodeClicked(episodeId)
                    }
                ).id("episode_${episode.id}")
            }

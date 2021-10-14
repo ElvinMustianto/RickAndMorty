@@ -8,7 +8,7 @@ object CharacterMapper {
 
     fun getCharacter(
         response: GetCharacterByIdResponse,
-        episodes: List<GetEpisodeByIdResponse>
+        episodes: List<GetEpisodeByIdResponse> = emptyList()
     ): Character {
         return Character(
             episodesList =episodes.map {
