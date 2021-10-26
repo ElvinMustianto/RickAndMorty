@@ -19,4 +19,8 @@
 <!--        <item name="cornerFamily">cut</item>-->
 <!--        <item name="cornerSizeTopLeft">15%</item>-->
     </style>
+    <style name="ShapeAppearanceOverlay.Corner" parent="">
+        <item name="cornerSizeTopLeft">40%</item>
+        <item name="cornerSizeBottomRight">40%</item>
+    </style>
 </resources>

@@ -6,8 +6,8 @@
 
     <androidx.core.widget.ContentLoadingProgressBar
         style="?android:attr/progressBarStyleLarge"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:indeterminateOnly="true"
         android:indeterminateTint="?attr/colorOnBackground"
         app:layout_constraintBottom_toBottomOf="parent"

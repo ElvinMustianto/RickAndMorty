@@ -5,29 +5,34 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/characterListFragment">
 
+    <action
+        android:id="@+id/action_global_to_detailEpisodeFragment"
+        app:destination="@id/detailEpisodeFragment" />
+
     <fragment
         android:id="@+id/characterListFragment"
-        android:name="com.example.rickandmorty.ui.list.CharacterListFragment"
+        android:name="com.example.rickandmorty.ui.character.list.CharacterListFragment"
         android:label="Rick and Morty Character"
         tools:layout="@layout/fragment_character_list" >
         <action
             android:id="@+id/action_characterListFragment_to_characterDetailFragment"
-            app:destination="@id/characterDetailFragment"
-            app:enterAnim="@anim/slide_in_from_right"
-            app:exitAnim="@anim/slide_out_to_left"
-            app:popEnterAnim="@anim/slide_out_to_right"
-            app:popExitAnim="@anim/slide_in_from_left"/>
+            app:destination="@id/characterDetailFragment"/>
+<!--            app:enterAnim="@anim/slide_in_from_right"-->
+<!--            app:exitAnim="@anim/slide_out_to_left"-->
+<!--            app:popEnterAnim="@anim/slide_out_to_right"-->
+<!--            app:popExitAnim="@anim/slide_in_from_left"/>-->
     </fragment>
 
     <fragment
         android:id="@+id/characterDetailFragment"
-        android:name="com.example.rickandmorty.ui.detail.CharacterDetailFragment"
+        android:name="com.example.rickandmorty.ui.character.detail.CharacterDetailFragment"
         android:label="Character Detail"
         tools:layout="@layout/fragment_character_detail">
         <argument
             android:name="characterId"
             android:defaultValue="-1"
             app:argType="integer" />
+
     </fragment>
 
     <fragment
@@ -35,10 +40,9 @@
         android:name="com.example.rickandmorty.ui.episode.EpisodeListFragment"
         android:label="Rick and Morty Episodes"
         tools:layout="@layout/fragment_episode_list">
-        <action
-            android:id="@+id/action_episodeListFragment_to_detailEpisodeFragment"
-            app:destination="@id/detailEpisodeFragment" />
+
     </fragment>
+
     <dialog
         android:id="@+id/detailEpisodeFragment"
         android:name="com.example.rickandmorty.ui.episode.detail.DetailEpisodeFragment"
@@ -50,6 +54,16 @@
             android:defaultValue="-1"
             app:argType="integer"/>
     </dialog>
+
+    <fragment
+        android:id="@+id/characterSearchFragment"
+        android:name="com.example.rickandmorty.ui.character.search.CharacterSearchFragment"
+        android:label="Character Search"
+        tools:layout="@layout/fragment_character_search">
+        <action
+            android:id="@+id/action_characterSearchFragment_to_characterDetailFragment"
+            app:destination="@id/characterDetailFragment" />
+    </fragment>
 
 
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.rickandmorty.ui.list
+package com.example.rickandmorty.ui.character.list
 
 
 import androidx.lifecycle.LiveData
@@ -7,8 +7,6 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.example.rickandmorty.Constants
-import com.example.rickandmorty.character.list.CharacterDataSourceFactory
-import com.example.rickandmorty.character.list.CharacterRepository
 import com.example.rickandmorty.service.response.GetCharacterByIdResponse
 
 class CharacterViewModel: ViewModel() {

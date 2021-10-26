@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.rickandmorty.domain.model.Episodes
-import com.example.rickandmorty.episode.EpisodeRepository
+import com.example.rickandmorty.ui.episode.EpisodeRepository
 import kotlinx.coroutines.launch
 
 class DetailEpisodeViewModel: ViewModel() {

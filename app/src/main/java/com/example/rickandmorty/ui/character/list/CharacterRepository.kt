@@ -1,4 +1,4 @@
-package com.example.rickandmorty.character.list
+package com.example.rickandmorty.ui.character.list
 
 import com.example.rickandmorty.service.response.GetCharactersPageResponse
 import com.example.rickandmorty.service.NetworkLayer

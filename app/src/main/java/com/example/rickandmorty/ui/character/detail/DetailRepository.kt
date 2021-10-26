@@ -1,4 +1,4 @@
-package com.example.rickandmorty.character.detail
+package com.example.rickandmorty.ui.character.detail
 
 import com.example.rickandmorty.domain.model.Character
 import com.example.rickandmorty.service.response.GetEpisodeByIdResponse

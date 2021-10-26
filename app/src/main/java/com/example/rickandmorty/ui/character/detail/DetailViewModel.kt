@@ -1,12 +1,10 @@
-package com.example.rickandmorty.ui.detail
+package com.example.rickandmorty.ui.character.detail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.rickandmorty.character.detail.DetailRepository
 import com.example.rickandmorty.domain.model.Character
-import com.example.rickandmorty.service.Cache
 import kotlinx.coroutines.launch
 
 class DetailViewModel: ViewModel() {

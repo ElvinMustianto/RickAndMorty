@@ -1,4 +1,4 @@
-package com.example.rickandmorty.character.list
+package com.example.rickandmorty.ui.character.list
 
 import com.airbnb.epoxy.EpoxyModel
 import com.airbnb.epoxy.paging.PagedListEpoxyController

@@ -1,4 +1,4 @@
-package com.example.rickandmorty.character.list
+package com.example.rickandmorty.ui.character.list
 
 import androidx.paging.PageKeyedDataSource
 import com.example.rickandmorty.service.response.GetCharacterByIdResponse

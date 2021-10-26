@@ -1,4 +1,4 @@
-package com.example.rickandmorty.episode
+package com.example.rickandmorty.ui.episode
 
 import com.example.rickandmorty.domain.model.Episodes
 

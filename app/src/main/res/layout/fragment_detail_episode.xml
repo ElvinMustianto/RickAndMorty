@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="?colorSurface"
+    android:paddingBottom="10dp"
     tools:context=".ui.episode.detail.DetailEpisodeFragment">
 
     <androidx.appcompat.widget.AppCompatTextView

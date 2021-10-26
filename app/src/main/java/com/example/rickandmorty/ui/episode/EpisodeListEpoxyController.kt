@@ -1,4 +1,4 @@
-package com.example.rickandmorty.episode
+package com.example.rickandmorty.ui.episode
 
 import com.airbnb.epoxy.EpoxyModel
 import com.airbnb.epoxy.paging3.PagingDataEpoxyController

@@ -1,4 +1,4 @@
-package com.example.rickandmorty.character.detail
+package com.example.rickandmorty.ui.character.detail
 
 import android.annotation.SuppressLint
 import com.airbnb.epoxy.CarouselModel_
@@ -11,7 +11,9 @@ import com.example.rickandmorty.epoxy.LoadingEpoxyModel
 import com.example.rickandmorty.epoxy.ViewBindingKotlinModel
 import com.squareup.picasso.Picasso
 
-class CharacterDetailEpoxyController: EpoxyController() {
+class CharacterDetailEpoxyController(
+    private val onClickEpisode: (Int) -> Unit
+): EpoxyController() {
 
     private var isLoading: Boolean = true
         set(value) {
@@ -54,7 +56,9 @@ class CharacterDetailEpoxyController: EpoxyController() {
         // Episode carousel list section
         if (character!!.episodesList.isNotEmpty()) {
             val item = character!!.episodesList.map {
-                EpisodeItem(it).id(it.id)
+                EpisodeItem(it, onClickEpisode = { episodeId ->
+                    onClickEpisode(episodeId)
+                }).id(it.id)
             }
             Title(title = "Episode").id("title_episodes").addTo(this)
             CarouselModel_()
@@ -113,12 +117,16 @@ class CharacterDetailEpoxyController: EpoxyController() {
     }
 
     data class EpisodeItem(
-        val episodes: Episodes
+        val episodes: Episodes,
+        val onClickEpisode: (Int) -> Unit
     ): ViewBindingKotlinModel<ModelEpisodeItemBinding>(R.layout.model_episode_item) {
         @SuppressLint("SetTextI18n")
         override fun ModelEpisodeItemBinding.bind() {
             episodeText.text = episodes.getFormattedSeasonTruncated()
             episodeDetailText.text = "${episodes.name}\n${episodes.airDate}"
+            root.setOnClickListener {
+                onClickEpisode(episodes.id)
+            }
         }
     }
 

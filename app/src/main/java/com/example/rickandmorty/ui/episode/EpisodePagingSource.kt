@@ -1,9 +1,8 @@
-package com.example.rickandmorty.episode
+package com.example.rickandmorty.ui.episode
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.rickandmorty.domain.mapper.EpisodeMapper
-import com.example.rickandmorty.domain.model.Episodes
 import com.example.rickandmorty.service.NetworkLayer
 
 class EpisodePagingSource(
@@ -21,7 +20,7 @@ class EpisodePagingSource(
 
         return LoadResult.Page(
             data = pageRequest.body.results.map { response ->
-                 EpisodeUiModel.Item(EpisodeMapper.buildFrom(response))
+                EpisodeUiModel.Item(EpisodeMapper.buildFrom(response))
             },
             prevKey = previousKey,
             nextKey = getPageIndexFromNext(pageRequest.body.info.next)

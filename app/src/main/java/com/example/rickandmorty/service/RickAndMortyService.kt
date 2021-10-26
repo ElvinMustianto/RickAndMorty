@@ -21,6 +21,12 @@ interface RickAndMortyService {
         @Query("page") pageIndex: Int
     ): Response<GetCharactersPageResponse>
 
+    @GET("character/")
+    suspend fun getCharactersPageSearch(
+        @Query("name") characterName: String,
+        @Query("page") pageIndex: Int
+    ): Response<GetCharactersPageResponse>
+
     @GET("character/{list}")
     suspend fun getMultipleCharacters(
         @Path("list") characterList: List<String>
